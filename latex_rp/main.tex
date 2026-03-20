@@ -1,0 +1,370 @@
+\documentclass[12pt,a4paper]{article}
+
+% 基础包
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+% 引用设置
+\usepackage[backend=biber,style=ieee,sorting=ynt]{biblatex}
+\addbibresource{references.bib}
+
+% 数学包
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+
+% 代码高亮（如果需要）
+\usepackage{listings}
+
+% 页面设置
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\small Research Proposal -- Yuhang Liu}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 标题格式
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+% 行距
+\setstretch{1.5}
+
+% 超链接颜色
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={Research Proposal - GaN Power IC},
+    pdfauthor={Yuhang Liu}
+}
+
+\begin{document}
+
+% ========== 标题页 ==========
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\LARGE\bfseries Research Proposal\par}
+    \vspace{1.5cm}
+    
+    {\Large\bfseries High-Performance GaN Power Integrated Circuits:\\[0.3cm]
+    Design and Optimization of DCFL-Based Driver Systems\\[0.3cm]
+    with Enhanced Reliability\par}
+    
+    \vspace{2cm}
+    
+    {\large\textbf{Applicant:} Yuhang Liu\par}
+    \vspace{0.5cm}
+    {\large\textbf{Target Program:} PhD in Electrical and Electronic Engineering\par}
+    \vspace{0.5cm}
+    {\large\textbf{Institution:} Xi'an Jiaotong-Liverpool University (XJTLU)\par}
+    
+    \vspace{2cm}
+    
+    {\large\textbf{Supervisor:} Prof. Wen Liu\par}
+    \vspace{0.3cm}
+    {\normalsize Department of Electrical and Electronic Engineering\par}
+    
+    \vfill
+    
+    {\large March 2026\par}
+    
+\end{titlepage}
+
+% ========== 目录 ==========
+\tableofcontents
+\newpage
+
+% ========== 正文开始 ==========
+
+\section{Project Title}
+
+\textbf{High-Performance GaN Power Integrated Circuits: Design and Optimization of DCFL-Based Driver Systems with Enhanced Reliability}
+
+\textit{(14 words)}
+
+\section{Project Summary}
+
+This research develops high-performance gallium nitride (GaN) power integrated circuits using Direct-Coupled FET Logic (DCFL) architecture for next-generation power electronics. By integrating protection circuits, high noise-immunity level shifters, and precision current sensing on a single chip, this work addresses critical reliability challenges including high dV/dt immunity, thermal management, and dynamic threshold voltage drift. The research establishes automated EKV model extraction methodologies using AI-assisted scripting tools to optimize GaN driver performance across different process nodes for industrial motor drives and power conversion applications.
+
+\textit{(98 words)}
+
+\section{Background}
+
+\subsection{Research Context and Motivation}
+
+The global transition toward electrification and renewable energy has created unprecedented demand for high-efficiency power electronic systems. Gallium Nitride (GaN) High Electron Mobility Transistors (HEMTs) have emerged as transformative devices for next-generation power conversion, offering superior switching speeds, lower on-resistance, and higher breakdown voltages compared to traditional silicon MOSFETs \cite{gao2024gan}. These characteristics make GaN particularly attractive for electric vehicle powertrains, renewable energy inverters, data center power supplies, and industrial motor drives.
+
+However, realizing the full potential of GaN power devices requires overcoming significant integration challenges. Current discrete implementations suffer from parasitic inductances that limit switching performance, while protection and sensing functions remain off-chip, increasing system complexity and cost. Monolithic integration of GaN power devices with their control and protection circuitry represents a critical frontier for advancing the technology \cite{liu2024monolithic}.
+
+\subsection{Literature Review}
+
+\subsubsection{GaN Power Device Technology}
+
+GaN HEMTs leverage the AlGaN/GaN heterojunction to create a high-mobility two-dimensional electron gas (2DEG) channel, enabling exceptional electron mobility and high current density \cite{ambacher1999two}. Two operational modes exist: Enhancement-mode (E-mode, normally-OFF) with positive threshold voltage, and Depletion-mode (D-mode, normally-ON) with negative threshold voltage. E-mode devices are preferred for power electronics due to their fail-safe operation, while D-mode devices serve as active loads in integrated circuits.
+
+Recent advances have demonstrated E-mode GaN HEMTs with threshold voltages exceeding 1.5V, enabling robust logic-level compatibility. Peking University (2024) achieved 650V GaN-on-Silicon integrated circuits using virtual body isolation technology, demonstrating the feasibility of high-voltage monolithic integration \cite{peking2024virtual}. Liverpool University (2025) reported GaN DCFL circuits operating at 300°C with conversion efficiencies exceeding 90\%, highlighting the technology's potential for harsh environments \cite{liverpool2025high}.
+
+\subsubsection{Direct-Coupled FET Logic (DCFL) for GaN Integration}
+
+DCFL represents the dominant approach for GaN digital and mixed-signal integration, utilizing E-mode HEMTs as driver transistors and D-mode HEMTs as load devices \cite{hwang2016dcfl}. This configuration eliminates the need for p-channel devices, which remain challenging in GaN technology due to the material's wide bandgap and low hole mobility.
+
+Key performance metrics for GaN DCFL include propagation delays of 146 ps/stage, operating frequencies up to 201 MHz, temperature stability at 300°C, and breakdown voltages up to 1400V \cite{nanjing2013ring}. Recent developments include Intel's 300mm GaN Chiplet technology (2026), integrating GaN N-MOSHEMT with silicon PMOS for CMOS-compatible logic libraries \cite{intel2026chiplet}.
+
+\subsubsection{Protection and Sensing Circuits}
+
+Reliable GaN power ICs require comprehensive protection mechanisms. SenseFET-based current sensing enables microsecond-level fault detection \cite{zhang2023sensefet}. The Three-Branch Level Shifter (TBLS) architecture achieves high dV/dt immunity while maintaining low propagation delays \cite{zhang2022tbls}. Dynamic on-resistance degradation, known as ``current collapse,'' results from charge trapping and represents a critical reliability concern for GaN devices \cite{joh2014drain}.
+
+\subsubsection{Research Gap}
+
+Despite significant progress, critical gaps remain:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Limited Integration of Protection Functions:} Most demonstrations focus on individual circuit blocks rather than complete protection systems.
+    \item \textbf{Insufficient High dV/dt Immunity:} Integration with GaN power switches under realistic switching conditions requires further investigation.
+    \item \textbf{Lack of Automated Design Tools:} Current EKV model extraction relies on manual parameter fitting, limiting design efficiency and cross-process portability.
+    \item \textbf{Cross-Process Portability:} EKV model extraction for different GaN process nodes requires repetitive manual effort, limiting design reuse.
+    \item \textbf{Standardized Design Kits:} The absence of comprehensive PDKs limits accessibility of GaN IC design.
+\end{enumerate}
+
+\section{Objectives and Research Questions}
+
+\subsection{Primary Objective}
+
+To develop a comprehensive GaN power integrated circuit platform using DCFL architecture, integrating high-voltage power switches with intelligent protection, sensing, and drive functions, while establishing automated EKV model extraction methodologies using AI-assisted scripting for cross-process circuit optimization.
+
+\subsection{Specific Research Questions}
+
+\textbf{RQ1: Circuit Protection Architecture}\\
+\textit{Question:} How can over-current, over-voltage, and over-temperature (OC/OV/OT) protection circuits be optimally integrated with GaN power HEMTs using DCFL technology to achieve rapid fault detection while minimizing silicon area overhead?\\
+\textit{Hypothesis:} A protection system utilizing SenseFET-based current sensing, stacked high-voltage detection structures, and temperature-compensated reference circuits can achieve sub-microsecond response time with minimal area penalty through optimized circuit topology and layout techniques.
+
+\textbf{RQ2: High Noise Immunity Level Shifting}\\
+\textit{Question:} What circuit architectures can achieve high dV/dt immunity for high-side gate drive in 650V GaN half-bridge configurations while maintaining low propagation delays?\\
+\textit{Hypothesis:} A modified Three-Branch Level Shifter (TBLS) with adaptive common-mode cancellation and integrated filtering can achieve enhanced dV/dt immunity with reduced propagation delay through capacitive isolation and differential common-mode rejection techniques.
+
+\textbf{RQ3: Precision Current Sensing}\\
+\textit{Question:} How can current mirror sensing circuits be optimized to achieve high accuracy across the full load range while compensating for device mismatch and parasitic inductance effects in integrated GaN current sensors?\\
+\textit{Hypothesis:} Kelvin-connected SenseFET layouts with parasitic inductance compensation algorithms can achieve improved sensing accuracy by calibrating against process variations and temperature drift.
+
+\textbf{RQ4: Thermal-Electrical Co-Design}\\
+\textit{Question:} What are the critical thermal-electrical coupling mechanisms in monolithic GaN power ICs, and how can layout optimization mitigate thermal-induced performance degradation?\\
+\textit{Hypothesis:} Thermal-aware placement of power and logic circuits, combined with integrated temperature sensing and adaptive gate drive, can improve thermal management compared to conventional layouts.
+
+\textbf{RQ5: Dynamic Reliability Enhancement}\\
+\textit{Question:} How can dynamic threshold voltage (Vth) shift and on-resistance (Rds(on)) degradation be compensated through circuit-level techniques to maintain consistent switching performance over device lifetime?\\
+\textit{Hypothesis:} Adaptive gate drive circuits with real-time monitoring and dynamic gate voltage adjustment can provide effective compensation for dynamic performance degradation under typical operating conditions.
+
+\textbf{RQ6: AI-Assisted Automated EKV Model Extraction}\\
+\textit{Question:} How can AI-assisted scripting tools automate EKV model parameter extraction across different GaN process nodes (0.25$\mu$m, 0.5$\mu$m, 2$\mu$m) to accelerate circuit design and improve cross-process portability?\\
+\textit{Hypothesis:} Machine learning-based scripting tools (utilizing ensemble regression algorithms such as Random Forest, XGBoost, and Gradient Boosting) can automate the extraction of EKV model parameters from measured device characteristics with prediction accuracy R$^2$ $>$ 0.95 and RMSE $<$ 5\%, significantly reducing manual effort and enabling rapid circuit optimization across different GaN processes through automated parameter fitting and validation workflows.
+
+\section{Theoretical Framework and Methods}
+
+\subsection{Research Design}
+
+This research adopts a systematic approach combining theoretical analysis, simulation-based design, and experimental validation through multiple tape-out iterations:
+
+\textbf{Phase 1: Foundation and Circuit Design (Months 1--12)}
+\begin{itemize}[leftmargin=*]
+    \item Literature review; coursework completion
+    \item Foundry PDK analysis and device model characterization
+    \item Circuit architecture design for RQ1--RQ5
+    \item Initial layout exploration and parasitic extraction
+\end{itemize}
+
+\textbf{Phase 2: First Tape-out and Validation (Months 12--24)}
+\begin{itemize}[leftmargin=*]
+    \item First test chip tape-out (Tape-out \#1): Individual circuit blocks validation
+    \item Post-silicon characterization and performance verification
+    \item Design iteration based on measured results
+    \item AI-assisted scripting tool development for EKV extraction (RQ6)
+\end{itemize}
+
+\textbf{Phase 3: System Integration and Second Tape-out (Months 24--36)}
+\begin{itemize}[leftmargin=*]
+    \item Full-system integration with validated building blocks
+    \item Second test chip tape-out (Tape-out \#2): Integrated system validation
+    \item Cross-process design porting using automated EKV extraction tools
+    \item Third test chip tape-out (Tape-out \#3): Multi-process validation
+\end{itemize}
+
+\textbf{Phase 4: Final Optimization and Completion (Months 36--48)}
+\begin{itemize}[leftmargin=*]
+    \item Final design optimization based on comprehensive test results
+    \item Fourth test chip tape-out (Tape-out \#4): Final system demonstration
+    \item Dissertation writing and defense preparation
+\end{itemize}
+
+\subsection{Methodology by Research Question}
+
+\subsubsection{RQ1--RQ5: Circuit Design and Validation Methodology}
+
+\textbf{Stage 1: Specification and Architecture (Months 1--6)}
+\begin{itemize}[leftmargin=*]
+    \item Define performance specifications based on target applications
+    \item Architectural exploration using behavioral modeling
+    \item Topology selection and initial feasibility analysis
+\end{itemize}
+
+\textbf{Stage 2: Schematic Design and Simulation (Months 6--12)}
+\begin{itemize}[leftmargin=*]
+    \item Transistor-level design using Cadence Virtuoso
+    \item Corner and Monte Carlo analysis for process variation robustness
+    \item EM/IR-aware design verification
+\end{itemize}
+
+\textbf{Stage 3: Layout and Pre-Tape-out Verification (Months 10--14)}
+\begin{itemize}[leftmargin=*]
+    \item Custom layout design with attention to matching and parasitic minimization
+    \item Post-layout simulation with extracted parasitics
+    \item Design rule checking (DRC) and layout vs. schematic (LVS) verification
+\end{itemize}
+
+\textbf{Stage 4: Post-Silicon Validation (Months 14--20, 26--32, 38--44)}
+\begin{itemize}[leftmargin=*]
+    \item Wafer-level probing and DC characterization
+    \item High-frequency and switching performance measurement
+    \item Temperature and reliability testing
+    \item Correlation analysis between simulation and measurement
+\end{itemize}
+
+\subsubsection{RQ6: AI-Assisted EKV Model Extraction Methodology}
+
+\textbf{Step 1: Measurement Database Generation}
+\begin{itemize}[leftmargin=*]
+    \item Collect device measurement data from multiple process nodes (0.25$\mu$m, 0.5$\mu$m, 2$\mu$m)
+    \item Cover geometry variations and operating conditions (--40°C to 200°C)
+    \item Extract EKV parameters using conventional methods for validation reference
+    \item Target dataset size: 500+ device instances per process node
+\end{itemize}
+
+\textbf{Step 2: AI-Assisted Scripting Tool Development}
+\begin{itemize}[leftmargin=*]
+    \item Develop Python-based automation scripts incorporating ensemble regression algorithms (Random Forest, XGBoost, and Gradient Boosting)
+    \item Feature engineering: device geometry ($L_g$, $W_g$), bias conditions ($V_{gs}$, $V_{ds}$), temperature, and process node identifiers
+    \item Implement automated parameter fitting workflows with cross-validation (k-fold, k=5)
+    \item Target accuracy metrics: R$^2$ $>$ 0.95, RMSE $<$ 5\% for all EKV parameters ($I_S$, $V_{T0}$, $\kappa$, $\eta$)
+    \item Create user-friendly interfaces for batch processing and cross-node comparison
+\end{itemize}
+
+\textbf{Step 3: Validation and Integration}
+\begin{itemize}[leftmargin=*]
+    \item Validate extraction accuracy against manually extracted parameters using hold-out test sets (20\% of data)
+    \item Perform correlation analysis between predicted and measured device characteristics
+    \item Integrate automated extraction into circuit design flow (Cadence Virtuoso environment)
+    \item Demonstrate cross-process portability through design case studies (e.g., level shifter ported across three nodes)
+\end{itemize}
+
+\subsection{Equipment and Resources}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Simulation Tools:} Cadence Virtuoso, Keysight ADS, COMSOL Multiphysics
+    \item \textbf{Fabrication Access:} XJTLU's in-house 2$\mu$m GaN facility; external foundry partnerships for 0.25$\mu$m and 0.5$\mu$m processes
+    \item \textbf{Characterization:} Semiconductor parameter analyzers, high-voltage pulse generators, thermal imaging, probe stations
+\end{itemize}
+
+\section{Significance and Contribution}
+
+\subsection{Theoretical Contributions}
+\begin{enumerate}[leftmargin=*]
+    \item Comprehensive GaN DCFL design framework with validated building blocks
+    \item Thermal-electrical coupling characterization for GaN ICs
+    \item Automated EKV model extraction methodology using AI-assisted scripting
+\end{enumerate}
+
+\subsection{Practical Contributions}
+\begin{enumerate}[leftmargin=*]
+    \item Integrated protection solutions for GaN power systems
+    \item High noise immunity techniques for robust gate drive
+    \item Cross-process design portability tools and workflows
+\end{enumerate}
+
+\subsection{Industrial Impact}
+\begin{enumerate}[leftmargin=*]
+    \item Electric vehicle powertrain applications
+    \item Renewable energy system efficiency improvements
+    \item Technology transfer through XJTLU industry partnerships (e.g., Navitas, Innoscience)
+\end{enumerate}
+
+\section{Risk Mitigation Strategy}
+
+\begin{longtable}{@{}p{3.5cm}p{10cm}@{}}
+\toprule
+\textbf{Risk} & \textbf{Mitigation} \\
+\midrule
+\endhead
+Process Variation & Design for worst-case corners ($\pm$15\% tolerance); statistical methodologies; multiple tape-outs for validation \\
+\addlinespace
+Thermal Management & Conservative power ratings; integrated temperature monitoring (--40°C to 150°C range); thermal-aware layout \\
+\addlinespace
+Extraction Tool Accuracy & Validation against manual extraction (R$^2$ $>$ 0.95 target); iterative refinement; hybrid approach \\
+\addlinespace
+Fabrication Delays & Early foundry engagement; parallel design tracks; flexible tape-out scheduling \\
+\addlinespace
+Measurement Correlation & Comprehensive test structure design; systematic debugging methodology \\
+\bottomrule
+\end{longtable}
+
+\section{Research Plan and Timeline}
+
+\subsection{4-Year Full-Time Programme with 4 Tape-outs}
+
+\textbf{Year 1: Foundation and Initial Design (Months 1--12)}
+\begin{itemize}[leftmargin=*]
+    \item Literature review; coursework completion
+    \item Foundry PDK analysis and device model study
+    \item Circuit architecture design for all RQs
+    \item Initial schematic design and simulation
+    \item \textbf{Deliverables:} Literature review report; PDK characterization summary
+\end{itemize}
+
+\textbf{Year 2: First Tape-out and Tool Development (Months 13--24)}
+\begin{itemize}[leftmargin=*]
+    \item Layout completion and Tape-out \#1 submission (Month 16)
+    \item Post-silicon characterization of individual blocks (Months 17--22)
+    \item AI-assisted EKV extraction tool development (RQ6)
+    \item Design iteration for second tape-out
+    \item \textbf{Deliverables:} Tape-out \#1 GDS; Test chip measurement report; EKV extraction tool v1.0
+\end{itemize}
+
+\textbf{Year 3: Integration and Multi-Process Validation (Months 25--36)}
+\begin{itemize}[leftmargin=*]
+    \item Tape-out \#2: Integrated system validation (Month 28)
+    \item Post-silicon testing and system-level verification (Months 29--34)
+    \item Cross-process porting using automated tools
+    \item Tape-out \#3: Multi-process validation (Month 36)
+    \item \textbf{Deliverables:} Tape-out \#2 \& \#3 GDS; System integration report; Cross-porting validation results
+\end{itemize}
+
+\textbf{Year 4: Final Optimization and Completion (Months 37--48)}
+\begin{itemize}[leftmargin=*]
+    \item Comprehensive data analysis and final design optimization
+    \item Tape-out \#4: Final system demonstration (Month 40)
+    \item Final characterization and correlation studies (Months 41--44)
+    \item Dissertation writing and defense (Months 45--48)
+    \item \textbf{Deliverables:} Tape-out \#4 GDS; Final system demo; PhD dissertation
+\end{itemize}
+
+% ========== 引用 ==========
+\newpage
+\printbibliography[title={References}]
+
+\end{document}
