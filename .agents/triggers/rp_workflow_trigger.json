@@ -1,0 +1,35 @@
+{
+  "trigger_name": "RP Workflow Auto-Prompt",
+  "description": "当对话涉及Research Proposal时，自动提示执行工作流",
+  "enabled": true,
+  "priority": 1,
+  "match_conditions": {
+    "keywords": [
+      "rp",
+      "research proposal",
+      "研究计划",
+      "研究提案",
+      "修订rp",
+      "审核rp",
+      "push rp",
+      "更新rp",
+      "rp版本",
+      "rp修改"
+    ],
+    "file_patterns": [
+      "*rp*.md",
+      "*research_proposal*.md",
+      "*phd_application_workspace/research_proposals*"
+    ],
+    "context_check": true
+  },
+  "action": {
+    "type": "prompt_user",
+    "message": "🔔 检测到 Research Proposal 相关内容\n\n是否执行 **[RP Revision & GitHub Push Workflow]**？\n\n该工作流将：\n1. 读取当前RP版本\n2. 执行学术审核并生成报告\n3. 自动修订Major Issues\n4. 推送到GitHub\n\n回复 **yes** 执行，或 **no** 跳过",
+    "timeout_seconds": 60,
+    "default_action": "ask"
+  },
+  "workflow_file": "/root/.openclaw/workspace/phd_application_workspace/.agents/workflows/rp_revision_workflow.json",
+  "created": "2026-03-20",
+  "updated": "2026-03-20"
+}

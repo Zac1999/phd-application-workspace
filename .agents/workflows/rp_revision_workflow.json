@@ -1,0 +1,78 @@
+{
+  "name": "RP Revision & GitHub Push Workflow",
+  "version": "1.0.0",
+  "description": "Research Proposal 审核-修订-GitHub推送完整工作流",
+  "created": "2026-03-20",
+  "author": "Yuhang Liu",
+  "trigger_keywords": [
+    "rp",
+    "research proposal",
+    "修订",
+    "审核",
+    "push",
+    "github",
+    "研究计划"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "name": "Read Current RP",
+      "action": "读取当前版本的 Research Proposal",
+      "command": "read /root/.openclaw/workspace/phd_application_workspace/research_proposals/drafts/v1.0_XJTLU_brainstorm/rp_v*.md",
+      "purpose": "了解当前RP版本和内容状态"
+    },
+    {
+      "step": 2,
+      "name": "Academic Audit",
+      "action": "执行学术审核",
+      "command": "生成审核报告到 /root/.openclaw/workspace/phd_application_workspace/reviewed/",
+      "output": "rp_v{version}_audit_YYYYMMDD_HHMMSS.md",
+      "checks": [
+        "Critical Issues (必须修复)",
+        "Major Issues (应该修复)",
+        "Minor Issues (可选修复)",
+        "SOP一致性检查"
+      ]
+    },
+    {
+      "step": 3,
+      "name": "Generate Revised Version",
+      "action": "生成修订版本",
+      "command": "基于审核报告自动修正 Major Issues",
+      "output": "/root/.openclaw/workspace/phd_application_workspace/revised/rp_v{version}_revised_YYYYMMDD_HHMMSS.md",
+      "auto_fix": [
+        "RQ方法论细节增强",
+        "定量指标补充",
+        "术语一致性修正"
+      ],
+      "manual_confirm": [
+        "References 完善",
+        "Timeline 具体化",
+        "Risk 量化"
+      ]
+    },
+    {
+      "step": 4,
+      "name": "GitHub Push",
+      "action": "推送到GitHub",
+      "command": "cd /root/.openclaw/workspace/phd_application_workspace && git add && git commit && git push",
+      "target_repo": "https://github.com/Zac1999/phd-application-workspace",
+      "branch": "main",
+      "commit_template": "Update Research Proposal to v{version}.{subversion} ({revision_type})\n\nChanges:\n- {change_list}"
+    }
+  ],
+  "file_structure": {
+    "drafts/": "原始草稿版本",
+    "reviewed/": "审核报告",
+    "revised/": "修订后的版本（推荐用于提交）",
+    "final/": "最终确认版本"
+  },
+  "naming_convention": {
+    "draft": "rp_v{version}_YYYYMMDD_HHMM.md",
+    "audit": "rp_v{version}_audit_YYYYMMDD_HHMMSS.md",
+    "revised": "rp_v{version}_revised_YYYYMMDD_HHMMSS.md",
+    "final": "rp_v{version}_final_YYYYMMDD_HHMMSS.md"
+  },
+  "priority": "high",
+  "auto_prompt": "检测到 Research Proposal 相关内容，是否执行 [RP Revision & GitHub Push Workflow]？"
+}
