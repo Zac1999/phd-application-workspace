@@ -1,0 +1,161 @@
+{
+  "source": "https://scholar.xjtlu.edu.cn/en/persons/WenLiu/",
+  "fetched_date": "2026-03-11",
+  "verified_status": "auto_extracted",
+  "confidence": "high",
+
+  "basic_info": {
+    "name": "Wen Liu",
+    "chinese_name": "刘雯",
+    "title": "Senior Associate Professor",
+    "department": "Department of EEE, School of Advanced Technology",
+    "university": "Xi'an Jiaotong-Liverpool University (XJTLU)",
+    "location": "Suzhou, China",
+    "positions": [
+      "Executive Director, XJTLU Advanced Semiconductor Research Center",
+      "Chair, IEEE CASS-EDS Joint Chapter Suzhou",
+      "Deputy Director, Youth Innovation Promotion Committee, CASA China",
+      "Director, XJTLU-Hong & Blue Microelectronics GaN Power Device Joint Research Center"
+    ],
+    "fellowships": [
+      "Fellow, The Higher Education Academy (UK)",
+      "IEEE Senior Member"
+    ]
+  },
+
+  "education": {
+    "bachelor": {
+      "institution": "Peking University",
+      "year": 2004,
+      "degree": "B.S."
+    },
+    "phd": {
+      "institution": "Nanyang Technological University, Singapore",
+      "year": 2008,
+      "degree": "Ph.D."
+    }
+  },
+
+  "research_areas": [
+    "GaN power devices and their circuit integration",
+    "Wide bandgap semiconductor devices",
+    "Physics-driven and AI-enhanced design of GaN-based devices and ICs",
+    "High performance GaN power devices and IC",
+    "All GaN DC-DC converter for radiation resistance",
+    "GaN optoelectronic integration"
+  ],
+
+  "research_projects": [
+    {
+      "title": "Development and Industrialization of High Performance Gallium Nitride Power Integrated Intelligent Chips",
+      "role": "Principal Investigator (PI)",
+      "period": "2023-2027",
+      "funding_source": "National Natural Science Foundation of China (NSFC) General Programme",
+      "team_size": 11
+    },
+    {
+      "title": "1200V high-voltage nitride power electronic materials and devices for industrial motors and wireless charging applications, and their industrialization",
+      "role": "PI",
+      "period": "2024-2027",
+      "funding_source": "National Key R&D Programme, Ministry of Science and Technology",
+      "team_size": 10
+    },
+    {
+      "title": "Research on single-stage high frequency link power sub transformer based on gallium nitride power integration",
+      "role": "Team member",
+      "period": "2022-2026",
+      "funding_source": "Technical commission project"
+    }
+  ],
+
+  "achievements": {
+    "publications": {
+      "journal_papers": "50+ (IEEE EDL, TED, TPE, Applied Surface Science, etc.)",
+      "conference_papers": "60+",
+      "top_conference_papers": "5 papers in ISPSD (first/corresponding author)"
+    },
+    "patents": {
+      "applied": "20+",
+      "authorized": 13
+    },
+    "standards": 4,
+    "total_funding_last_5_years": "8+ million RMB as PI"
+  },
+
+  "teaching": {
+    "courses": [
+      {
+        "code": "SAT405/406",
+        "name": "Final MRes Project"
+      },
+      {
+        "code": "EEE417",
+        "name": "Advanced Semiconductor Materials and Devices for Efficient Power Conversion"
+      },
+      {
+        "code": "EEE406",
+        "name": "Power Electronics and Application of Renewable Energy"
+      },
+      {
+        "code": "EEE333/INT309",
+        "name": "Multimedia Information Retrieval and Technology"
+      }
+    ]
+  },
+
+  "supervision_record": {
+    "phd_completed": 9,
+    "master_completed": "20+",
+    "current_recruitment": [
+      "Postdoctoral fellows",
+      "M.S./Ph.D. students",
+      "Research assistants"
+    ],
+    "contact_for_positions": "Email (welcome to enquire)"
+  },
+
+  "service": {
+    "conference_roles": [
+      "Publication Chair, IEEE International Conference on IC Design and Manufacturing (2023)",
+      "Program Committee, Power Semiconductor Devices and ICs Workshop (2024, 2025)"
+    ],
+    "committee_memberships": [
+      "Organizing Committee, 5th National Wide Bandgap Semiconductor Conference (2023, 2025)"
+    ]
+  },
+
+  "awards": [
+    "Outstanding Postgraduate Supervision Award (2023)",
+    "Dushu Lake Science and Education Innovation Zone Visiting Engineering Award (2022)"
+  ],
+
+  "sdg_contribution": [
+    "SDG 7: Affordable and Clean Energy",
+    "SDG 3: Good Health and Well-being"
+  ],
+
+  "keywords_for_sop": [
+    "GaN power devices",
+    "wide bandgap semiconductors",
+    "power integrated circuits",
+    "AI-enhanced device design",
+    "NSFC General Programme",
+    "industrialization",
+    "high-performance chips",
+    "radiation-hardened electronics"
+  ],
+
+  "why_choose_for_sop": {
+    "research_alignment": "研究方向与申请人背景/兴趣的匹配点",
+    "funding_strength": "充足的国家级经费保障研究条件",
+    "supervision_quality": "丰富的博士生培养经验（9名已毕业）和官方认可（2023督导奖）",
+    "international_environment": "西交利物浦大学的国际化平台（英国高等教育认证）",
+    "industry_connection": "华为横向课题等产学研合作，成果转化路径清晰",
+    "team_collaboration": "明确的课题组成员分工，跨学科合作"
+  },
+
+  "contact": {
+    "email": "available_on_website",
+    "research_group_page": "https://scholar.xjtlu.edu.cn/en/persons/WenLiu/"
+  }
+}

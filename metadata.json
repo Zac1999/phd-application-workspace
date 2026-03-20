@@ -1,0 +1,18 @@
+{
+  "workspace_name": "PhD Application Workspace",
+  "created_date": "2026-03-11",
+  "purpose": "独立管理博士申请全过程，与主workspace分离",
+  "structure": {
+    "personal_info/": "申请人已验证的个人信息（从user_data.verified同步）",
+    "professors/": "目标导师信息档案",
+    "drafts/": "SOP各版本草稿",
+    "requirements/": "各学校申请要求（文书字数、格式）",
+    "deadlines/": "申请截止日期追踪",
+    "submitted/": "已提交材料的记录"
+  },
+  "integration": {
+    "source_of_truth": "/root/.openclaw/workspace/user_data/verified/",
+    "sync_method": "手动复制或符号链接",
+    "related_skills": ["phd-personal-statement"]
+  }
+}

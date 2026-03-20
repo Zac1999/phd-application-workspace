@@ -1,0 +1,303 @@
+{
+  "source": "Extracted from PDF files (Curriculum Vitae + Transcripts)",
+  "extraction_date": "2026-03-11",
+  "verified_by": "automatic_extraction + manual_review_needed",
+  
+  "personal_info": {
+    "name": "Yuhang Liu",
+    "chinese_name": "刘宇航",
+    "gender": "male",
+    "nationality": "中国",
+    "birth_date": "1999-02-10",
+    "contact": {
+      "email": "zacliu1999@foxmail.com",
+      "phone": "+86 182 7527 4934",
+      "address": "Room 203, No. 203, Jinqiao Hengjie Community, Pudong New Area, Shanghai, China"
+    },
+    "orcid": "0000-0001-9900-982X"
+  },
+
+  "education": [
+    {
+      "degree": "Master of Science (MSc)",
+      "institution": "University of Bristol, UK",
+      "major": "Opticlectronic & Quantum Technologies",
+      "start_date": "2021-09",
+      "end_date": "2022-12",
+      "gpa": "Merit (英国学位等级)",
+      "ranking": "Merit (对应60-69分区间)",
+      "total_credits": 180,
+      "courses_detail": [
+        {"name": "Radio Frequency Engineering (M)", "score": 60, "level": "7"},
+        {"name": "VLSI Design M", "score": 73, "level": "7"},
+        {"name": "Quantum Device Engineering", "score": 64, "level": "7"},
+        {"name": "Digital Signal Processing Systems", "score": 61, "level": "7"},
+        {"name": "Advanced Optoelectronic Devices", "score": 64, "level": "7"},
+        {"name": "Nanofabrication for Quantum Engineering", "score": 65, "level": "7"},
+        {"name": "Integrated Circuit Electronics", "score": 57, "level": "7"}
+      ],
+      "dissertation": "HEMT System Optimization – Enhanced performance of high-frequency communication devices (including GaN HEMT parameter tuning)",
+      "language": "English"
+    },
+    {
+      "degree": "Bachelor of Engineering (BEng)",
+      "institution": "Harbin Institute of Technology (HIT), China",
+      "major": "Electronic Science & Technologies",
+      "start_date": "2017-09",
+      "end_date": "2021-06",
+      "gpa": "78.12/100",
+      "ranking": "High 2.1 Class Degree (英国本科成绩等级)",
+      "total_credits": 176,
+      "courses_detail": [
+        {"name": "Principles of Integrated Circuit Design", "score": 90},
+        {"name": "Signals and Systems", "score": 91},
+        {"name": "Electromagnetic Field and Wave", "score": 82},
+        {"name": "Digital Signal Processing", "score": 76},
+        {"name": "Microelectronic Devices Reliability", "score": 85},
+        {"name": "Analog CMOS IC Design", "score": 82},
+        {"name": "Microelectronic Device Principles", "score": 64}
+      ],
+      "language": "中文授课"
+    }
+  ],
+
+  "research_experience": [
+    {
+      "position": "Research Assistant",
+      "institution": "University of Bristol Quantum Engineering Technology Labs, UK",
+      "duration": "2021-06 to 2022-03",
+      "project_name": "THz Receiver LNA Design and GaN HEMT Optimization",
+      "supervisor": "未提及具体导师",
+      "description": "设计用于THz接收机的低噪声放大器(LNA)，通过COMSOL仿真优化GaN HEMT器件性能，提升GaN无线收发器功率效率；构建THz接收机原型，为GaN高速通信器件奠定硬件基础。",
+      "your_contribution": [
+        "独立完成LNA电路设计与仿真",
+        "使用COMSOL进行GaN HEMT器件性能优化",
+        "搭建THz接收机硬件原型"
+      ],
+      "skills_used": ["GaN HEMT", "COMSOL", "RF circuit design", "LNA design"],
+      "outcomes": ["硬件原型", "仿真优化报告"]
+    },
+    {
+      "position": "Research Assistant",
+      "institution": "HIT Microelectronics Research Center, China",
+      "duration": "2020-09 to 2021-06",
+      "project_name": "Basic Analog IP Design for GaN Driver Modules",
+      "supervisor": "未提及",
+      "description": "设计单级折叠共源共栅运算放大器和带隙基准(BG)电路；完成5V输出LDO的设计、版图与后仿真。",
+      "your_contribution": [
+        "独立完成运放和BG电路设计",
+        "负责LDO的全流程设计（schematic→layout→post-sim）"
+      ],
+      "skills_used": ["Analog IC design", "Cadence", "layout", "post-simulation"],
+      "outcomes": ["电路设计完成", "版图生成", "仿真验证通过"]
+    },
+    {
+      "position": "Engineer (Student)",
+      "institution": "HIT Unmanned Aerial Vehicle Lab, China",
+      "duration": "2017-09 to 2021-06",
+      "project_name": "FPGA-based AHRS System and IoT Deployment",
+      "supervisor": "未提及",
+      "description": "基于Lattice MAX10M08 FPGA设计航姿参考系统(AHRS)；基于ESP32/ESP8266/AllWinner H616部署家用物联网系统。",
+      "your_contribution": [
+        "FPGA编程实现AHRS算法",
+        "嵌入式系统开发与物联网部署"
+      ],
+      "skills_used": ["FPGA (Lattice)", "MATLAB", "embedded systems", "IoT"],
+      "outcomes": ["AHRS系统运行", "IoT系统部署"]
+    }
+  ],
+
+  "professional_experience": [
+    {
+      "position": "Analog IC Design Engineer",
+      "company": "上海芯听半导体有限公司 (LINK-IC CO., Ltd.)",
+      "duration": "2024-12 to Present",
+      "key_projects": [
+        {
+          "name": "Audio CLASS-D Power Amplifier Chip",
+          "description": "主导消费级音频D类功率放大器芯片设计（中芯国际18nm BCD工艺），2套方案应用于无线音频设备。",
+          "responsibilities": [
+            "芯片架构设计",
+            "模拟电路设计",
+            "与汽车客户协作优化功能"
+          ]
+        },
+        {
+          "name": "High-Voltage Protection Circuits",
+          "description": "设计高压驱动过流/过压/过温（OC/OV/OT）保护电路。",
+          "skills": ["high-voltage design", "protection circuits"]
+        }
+      ]
+    },
+    {
+      "position": "Technology Development (TD) Engineer",
+      "company": "上海芯旺微电子股份有限公司 (CHIPON)",
+      "duration": "2024-04 to 2024-12",
+      "key_projects": [
+        {
+          "name": "SIP Chip HV Peripheral Sub-chip",
+          "description": "主导系统级封装合封（SIP）芯片高压外设子芯片开发（集成DRIVER、PMU、PGA、LIN/CAN）。",
+          "responsibilities": [
+            "全流程芯片研发管理",
+            "IBM ELM知识产权归档",
+            "跨部门协调"
+          ]
+        }
+      ]
+    },
+    {
+      "position": "Project Leader",
+      "company": "CHIPON",
+      "duration": "2023-07 to 2024-04",
+      "key_projects": [
+        {
+          "name": "BLDC Drive Model and PMU Chip",
+          "description": "基于SVPWM/BEMF控制搭建BLDC驱动模型；主导高压PMU芯片设计（集成LDO、BG、CP、POR、OTP、UVP、OVP模块）。",
+          "skills": ["MATLAB", "PMU design", "gate driver"]
+        }
+      ]
+    },
+    {
+      "position": "Analog IC Design Engineer",
+      "company": "CHIPON",
+      "duration": "2022-01 to 2023-07",
+      "achievements": [
+        "设计12位全差分SAR ADC（带自校准）",
+        "完成10位144ksps循环ADC（ENOB=9.2）"
+      ]
+    },
+    {
+      "position": "R&D Intern",
+      "company": "CHIPON",
+      "duration": "2021-07 to 2022-01",
+      "achievements": [
+        "优化12位1Msps SAR ADC，降低70%功耗",
+        "修复3个核心产品缺陷"
+      ]
+    }
+  ],
+
+  "skills": {
+    "technical": [
+      "GaN HEMT tuning",
+      "High-voltage drive circuits",
+      "CLASS-D power amplifiers",
+      "PMU/GDU modules",
+      "OC/OV/OT protection",
+      "SAR ADC design",
+      "LDO/BG design",
+      "RF circuit design",
+      "VLSI design",
+      "Analog IC design (full flow)",
+      "COMSOL simulation",
+      "MATLAB/Simulink",
+      "VerilogA/AMS",
+      "FPGA prototyping (Lattice)",
+      "Cadence tools",
+      "IBM ELM"
+    ],
+    "languages": [
+      {"name": "English", "level": "Professional (MSc taught in English, UK study experience)", "reading": "fluent", "writing": "fluent", "speaking": "fluent"},
+      {"name": "中文", "level": "母语"}
+    ],
+    "certifications": [
+      "PMP project management (training completed)",
+      "ISO 26262 functional safety (automotive chip experience)"
+    ],
+    "domain_knowledge": [
+      "GaN power devices and HEMT",
+      "Motor driver ICs",
+      "Audio power amplifiers",
+      "High-voltage integrated circuits",
+      "Optoelectronic & quantum technologies"
+    ]
+  },
+
+  "publications": {
+    "status": "暂无正式发表论文",
+    "notes": "Research experience demonstrated through projects and industrial work",
+    "potential_publications": [
+      "HEMT System Optimization (dissertation topic)",
+      "GaN-related chip design works (may be converted to publications)"
+    ]
+  },
+
+  "motivation": {
+    "why_this_field": "在硕士阶段的RF工程和VLSI设计中接触到GaN器件，通过COMSOL仿真优化GaN HEMT性能，发现其在高压、高频应用中的巨大潜力。工作期间设计了多种GaN驱动芯片（电机驱动、音频放大），积累了从仿真到流片的全流程经验，确信GaN功率集成电路是未来发展方向，希望深入学术研究推动技术进步。",
+    "why_xjtlu": [
+      "XJTLU的国际化环境（英国 Liverpool 学位）与我在英国留学的经历高度契合",
+      "刘雯教授在宽禁带半导体GaN功率器件与集成电路领域的研究方向与我的专业背景完全匹配",
+      "刘教授主持的国家自然科学基金面上项目（2023-2027）关注AI驱动的GaN器件设计，与我对GaN驱动芯片的研究兴趣一致",
+      "学校与华为等企业的合作，为研究成果产业化提供平台"
+    ],
+    "academic_interests": [
+      "高性能GaN驱动芯片设计",
+      "GaN功率器件与单片集成",
+      "AI辅助GaN器件优化",
+      "高压驱动电路保护",
+      "GaN在电机驱动和音频功率放大中的应用"
+    ],
+    "alignment_with_prof_liu": {
+      "her_research": ["宽禁带半导体器件", "GaN功率器件与IC", "AI增强设计"],
+      "my_experience": ["GaN HEMT调谐", "高压驱动电路", "CLASS-D功率放大器", "PMU/GDU集成"],
+      "match_score": "90%+ (高度契合)"
+    }
+  },
+
+  "goals": {
+    "short_term": {
+      "timeline": "Year 1-2: 课程学习与文献调研，深入掌握GaN功率器件物理和先进设计方法",
+      "research_plan": "Year 3-4: 开展高性能GaN驱动芯片研究，重点攻关高压驱动效率和可靠性问题，发表高水平论文",
+      "collaboration": "积极参与刘教授的国家项目（NSFC General Programme），贡献工业界经验"
+    },
+    "long_term": "成为学术界与工业界的桥梁，既从事前沿研究，又推动GaN技术在实际产品中的应用；或在高校任教，继续GaN功率集成电路研究。",
+    "impact": "通过提升GaN驱动芯片的效率和可靠性，推动新能源汽车、工业电机、5G通信等领域的技术进步，助力绿色能源和节能环保。"
+  },
+
+  "funding": {
+    "preference": "自费（按XJTLU规定承担3年学费）",
+    "plan": "希望获得助教或科研助理岗位补贴",
+    "commitment": "全职投入博士研究，可兼职支持刘教授在研项目的产业化部分"
+  },
+
+  "application_details": {
+    "target_university": "Xi'an Jiaotong-Liverpool University (XJTLU)",
+    "target_program": "PhD in Electronic and Electrical Engineering (or related)",
+    "target_supervisor": "Prof. Wen Liu",
+    "supervisor_research_areas": ["GaN power devices", "Wide bandgap semiconductors", "AI-enhanced IC design"],
+    "intake_year": "2025",
+    "personal_statement_requirements": {
+      "length": "800-1000 words",
+      "language": "English (Academic)",
+      "must_cover": [
+        "Motivation to study the programme",
+        "Academic achievements in postgraduate/undergraduate studies",
+        "Future study plans",
+        "Reasons for choosing XJTLU"
+      ],
+      "structure_suggestion": "6 paragraphs (Introduction, Academic achievements, Research experience, Why XJTLU, Future plan, Conclusion)"
+    }
+  },
+
+  "metadata": {
+    "generated_from": [
+      "Curriculum Vitae (English version)",
+      "Curriculum Vitae (Chinese version)",
+      "MSc Transcript - University of Bristol"
+    ],
+    "extraction_method": "pdftotext + manual curation",
+    "confidence": "high",
+    "gaps_and_assumptions": [
+      "本科成绩单为图片格式，未提取（但简历已提供GPA和部分课程成绩）",
+      "研究经历中的具体贡献基于简历描述，可能需要进一步细化",
+      "论文发表情况：暂无，但可强调研究潜力",
+      "英语水平：仅知在英国学习，需补充雅思/托福成绩（如有）"
+    ],
+    "next_actions_required": [
+      "补充具体的论文发表情况（如有）",
+      "确认硕士阶段是否有明确导师姓名",
+      "补充 TOEFL/IELTS 成绩（如有）",
+      "根据个人感受细化'动机'和'目标'部分，使其更个人化"
+    ]
+  }
+}

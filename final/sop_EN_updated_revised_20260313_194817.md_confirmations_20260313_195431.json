@@ -1,0 +1,10 @@
+{
+    "document": "sop_EN_updated_revised_20260313_194817.md_final_20260313_195431.md",
+    "timestamp": "2026-03-13T19:54:31+08:00",
+    "confirmations": {
+        "change_1": { "description": "Citation format", "decision": "YES", "applied": true },
+        "change_2": { "description": "Timeline details", "decision": "YES", "applied": true },
+        "change_3": { "description": "Terminology", "decision": "YES", "applied": true }
+    },
+    "status": "complete"
+}

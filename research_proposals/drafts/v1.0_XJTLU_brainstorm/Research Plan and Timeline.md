@@ -1,0 +1,1 @@
+Summarise the key actions and milestones of the proposed research, with a full-time programme spanning 3-4 years and a part-time programme extending over 4-6 years. It is advisable that a Gantt chart included in the Research Proposal to illustrate the various stages and activities of the research project in terms of a schedule to meet time-lines and milestones.

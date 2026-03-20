@@ -1,0 +1,45 @@
+{
+  "university": "Xi'an Jiaotong-Liverpool University (XJTLU)",
+  "program": "PhD in Electronic and Electrical Engineering (or related)",
+  "application_requirements": {
+    "personal_statement": {
+      "required": true,
+      "length_words": "800-1000",
+      "language": "English",
+      "format": "Essay/Statement of Purpose",
+      "key_points_must_cover": [
+        "Motivation to study the programme",
+        "Academic achievements in postgraduate/undergraduate studies",
+        "Future study plans",
+        "Reasons for choosing XJTLU"
+      ]
+    },
+    "additional_common_questions": [
+      "Research experience and interests",
+      "Why this particular supervisor (if specified)",
+      "Career goals after PhD"
+    ]
+  },
+  "implicit_expectations": {
+    "show_knowledge_of": [
+      "XJTLU's international environment (University of Liverpool degree)",
+      "Specific research centers (e.g., Advanced Semiconductor Research Center)",
+      "Supervisor's recent publications and projects",
+      "Department facilities and industry connections"
+    ],
+    "demonstrate": [
+      "Clear research direction aligned with faculty",
+      "Understanding of PhD rigor and commitment",
+      "Preparedness for interdisciplinary work",
+      "Long-term contribution potential"
+    ]
+  },
+  "structure_suggestion": {
+    "paragraph_1_introduction": "Research interest origin and fit",
+    "paragraph_2_academic_achievements": "Undergraduate/postgrad highlights with metrics",
+    "paragraph_3_research": "STAR-described projects and outcomes",
+    "paragraph_4_why_xjtlu": "Supervisor match + university resources",
+    "paragraph_5_study_plan": "4-5 year PhD timeline with milestones",
+    "paragraph_6_conclusion": "Career vision and fit summary"
+  }
+}
